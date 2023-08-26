@@ -6,6 +6,6 @@
 
 <div class="flex flex-col gap-4">
 	{#each cartItems as cartItem}
-		<CartItem product={cartItem.product} quantity={cartItem.quantity} />
+		<CartItem {cartItem} />
 	{/each}
 </div>

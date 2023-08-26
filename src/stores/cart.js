@@ -28,13 +28,12 @@ export function addToCart(product) {
 	}
 }
 
-export function removeFromCart(product, index) {
+export function removeFromCart(product) {
 	let items = get(cartItems);
 	let productId = product.product.id;
-	let itemIndex = index;
-	// items.findIndex((item) => {
-	// 	return item.product.id == productId;
-	// });
+	let itemIndex = items.findIndex((item) => {
+		return item.product.id == productId;
+	});
 
 	if (product.quantity == 1) {
 		items.splice(itemIndex, 1);
@@ -51,4 +50,18 @@ export function removeFromCart(product, index) {
 			return updatedItems;
 		});
 	}
+}
+
+export function incrementQuantity(product) {
+	let items = get(cartItems);
+	let productId = product.product.id;
+	cartItems.update(() => {
+		let updatedItems = items.map((item) => {
+			if (item.product.id === productId) {
+				return { product: { ...item.product }, quantity: item.quantity + 1 };
+			}
+			return item;
+		});
+		return updatedItems;
+	});
 }
