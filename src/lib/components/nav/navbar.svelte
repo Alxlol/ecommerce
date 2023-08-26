@@ -1,5 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
+	import CartIcon from '../icons/cart-icon.svelte';
 </script>
 
 <nav class="flex justify-between items-center">
@@ -8,9 +9,7 @@
 		<p>OnlineShop</p>
 	</a>
 	<div class="flex gap-2 text-slate-700">
-		<a href="/cart">
-			<Icon icon="mdi:cart" width="30" height="30" />
-		</a>
+		<CartIcon />
 		<Icon icon="mdi:user" width="30" height="30" />
 	</div>
 </nav>

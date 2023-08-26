@@ -1,5 +1,5 @@
 <script>
-	import Page from '../../../routes/+page.svelte';
+	import { addToCart } from '../../../stores/cart';
 	export let product = {};
 </script>
 
@@ -12,7 +12,9 @@
 			<p class="text-xs">{product.title}</p>
 			<p class="font-semibold mt-2">${product.price}.99</p>
 		</a>
-		<button class="bg-blue-400 py-2 w-full rounded-md text-white text-sm font-light mt-4"
+		<button
+			on:click={() => addToCart(product)}
+			class="bg-blue-400 py-2 w-full rounded-md text-white text-sm font-light mt-4"
 			>Add to cart</button
 		>
 	</div>
