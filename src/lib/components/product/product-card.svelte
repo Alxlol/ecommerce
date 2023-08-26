@@ -5,11 +5,15 @@
 
 <div class="bg-slate-50 rounded-lg overflow-hidden shadow-md flex flex-col justify-between">
 	<a href="/product/{product.id}"
-		><img src={product.thumbnail} alt="" class="w-full h-24 smd:h-32 object-cover" /></a
+		><img
+			src={product.thumbnail}
+			alt="picture of {product.category}"
+			class="w-full object-cover h-40"
+		/></a
 	>
 	<div class="p-2 flex flex-col justify-end">
 		<a href="/product/{product.id}">
-			<p class="text-xs">{product.title}</p>
+			<p class="text-sm">{product.title}</p>
 			<p class="font-semibold mt-2">${product.price}.99</p>
 		</a>
 		<AddToCartButton {product} />

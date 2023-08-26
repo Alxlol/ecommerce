@@ -3,15 +3,11 @@
 	import PageWrapper from '../../lib/components/page/page-wrapper.svelte';
 	import { cartItems } from '../../stores/cart';
 
-	function calculateCartSum() {
+	function getCartSum() {
 		let sum = 0;
-		$cartItems.map((obj) => {
-			sum += obj.product.price * obj.quantity;
-		});
+		$cartItems.map((item) => (sum += item.product.price * item.quantity));
 		return sum;
 	}
-
-	export const cartSum = calculateCartSum();
 </script>
 
 <div class="mb-36">
@@ -20,10 +16,14 @@
 	</PageWrapper>
 </div>
 
-<footer class="bg-slate-100 fixed left-0 bottom-0 w-full p-6">
+<footer class="bg-slate-50 fixed left-0 bottom-0 w-full p-6">
 	<div class="flex justify-between text-sm">
 		<p>Total</p>
-		<p class="font-semibold">$ {cartSum}.00</p>
+		{#key $cartItems}
+			<p class="font-semibold">
+				$ {getCartSum()}.00
+			</p>
+		{/key}
 	</div>
 	<button class="bg-blue-400 rounded-md py-2 w-full mt-6">Checkout</button>
 </footer>
