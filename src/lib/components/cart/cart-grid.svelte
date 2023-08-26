@@ -2,7 +2,6 @@
 	import CartItem from './cart-item.svelte';
 
 	export let cartItems = [];
-	console.log(cartItems);
 </script>
 
 <div class="flex flex-col gap-4">

@@ -1,4 +1,6 @@
 <script>
+	import AddToCartButton from '../../../lib/components/buttons/add-to-cart-button.svelte';
+	import BuyNowButton from '../../../lib/components/buttons/buy-now-button.svelte';
 	import PageWrapper from '../../../lib/components/page/page-wrapper.svelte';
 	import Icon from '@iconify/svelte';
 
@@ -10,7 +12,6 @@
 	export const product = products.find((item) => {
 		return item.id == productId;
 	});
-	console.log(product);
 </script>
 
 <img class="w-full" src={product.thumbnail} alt="" />
@@ -23,7 +24,9 @@
 				<span class="text-xs text-dark-500">( 219 people bought this )</span>
 			</p>
 		</div>
-		<Icon icon="ant-design:heart-twotone" color="rgb(248 113 113)" width="30" height="30" />
+		<div>
+			<Icon icon="ant-design:heart-twotone" color="rgb(248 113 113)" width="30" height="30" />
+		</div>
 	</div>
 	<hr class="my-4" />
 	<div class="mt-4">
@@ -47,12 +50,11 @@
 	</div>
 	<hr class="my-4" />
 	<div class="flex gap-6">
-		<button class="bg-blue-400 py-2 w-full rounded-md text-white text-sm font-light mt-4"
+		<!-- <button class="bg-blue-400 py-2 w-full rounded-md text-white text-sm font-light mt-4"
 			>Add to cart</button
-		>
-		<button class="bg-orange-400 py-2 w-full rounded-md text-white text-sm font-light mt-4"
-			>Buy now</button
-		>
+		> -->
+		<AddToCartButton {product} />
+		<BuyNowButton {product} />
 	</div>
 </PageWrapper>
 
