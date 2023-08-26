@@ -2,6 +2,16 @@
 	import CartGrid from '../../lib/components/cart/cart-grid.svelte';
 	import PageWrapper from '../../lib/components/page/page-wrapper.svelte';
 	import { cartItems } from '../../stores/cart';
+
+	function calculateCartSum() {
+		let sum = 0;
+		$cartItems.map((obj) => {
+			sum += obj.product.price * obj.quantity;
+		});
+		return sum;
+	}
+
+	export const cartSum = calculateCartSum();
 </script>
 
 <div class="mb-36">
@@ -13,7 +23,7 @@
 <footer class="bg-slate-100 fixed left-0 bottom-0 w-full p-6">
 	<div class="flex justify-between text-sm">
 		<p>Total</p>
-		<p class="font-semibold">$ 1999.99</p>
+		<p class="font-semibold">$ {cartSum}.00</p>
 	</div>
 	<button class="bg-blue-400 rounded-md py-2 w-full mt-6">Checkout</button>
 </footer>

@@ -4,25 +4,30 @@
 
 	export let categories = [
 		{
-			name: 'Office',
-			icon: 'mdi:office-chair'
+			name: 'phones',
+			icon: 'mdi:cellphone',
+			url: 'category/smartphones'
 		},
 		{
-			name: 'Gaming',
-			icon: 'maki:gaming'
+			name: 'laptops',
+			icon: 'mdi:laptop',
+			url: 'category/laptops'
 		},
 		{
-			name: 'Audio',
-			icon: 'mdi:audio'
+			name: 'furniture',
+			icon: 'map:furniture-store',
+			url: 'category/furniture'
 		},
 		{
-			name: 'Streaming',
-			icon: 'material-symbols:stream'
-		},
-		{
-			name: 'All',
-			icon: 'eva:done-all-outline'
+			name: 'watches',
+			icon: 'ic:round-watch',
+			url: 'category/mens-watches'
 		}
+		// {
+		// 	name: 'All',
+		// 	icon: 'eva:done-all-outline',
+		// 	url: 'all-products'
+		// }
 	];
 </script>
 
@@ -30,7 +35,8 @@
 	<SectionHeadline>Categories</SectionHeadline>
 	<div class="w-full overflow-x-auto whitespace-nowrap flex justify-between">
 		{#each categories as category}
-			<CategoryItem text={category.name} icon={category.icon} />
+			<CategoryItem text={category.name} icon={category.icon} url={category.url} />
 		{/each}
+		<CategoryItem text="All" icon="eva:done-all-outline" url="all-products" />
 	</div>
 </div>

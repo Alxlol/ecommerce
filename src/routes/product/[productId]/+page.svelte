@@ -12,6 +12,8 @@
 	export const product = products.find((item) => {
 		return item.id == productId;
 	});
+
+	console.log(product);
 </script>
 
 <img class="w-full" src={product.thumbnail} alt="" />
