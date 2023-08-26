@@ -4,13 +4,16 @@
 	import NewProducts from '../lib/components/new-products/new-products.svelte';
 	import Navbar from '../lib/components/nav/navbar.svelte';
 	import Search from '../lib/components/nav/search.svelte';
+	import PageWrapper from '../lib/components/page/page-wrapper.svelte';
 
 	export let data;
 	export let products = data.products;
 </script>
 
-<Navbar />
-<Search />
-<Banners />
-<Categories />
-<NewProducts {products} />
+<PageWrapper>
+	<Navbar />
+	<Search />
+	<Banners />
+	<Categories />
+	<NewProducts {products} />
+</PageWrapper>

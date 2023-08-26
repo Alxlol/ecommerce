@@ -9,6 +9,9 @@ export default {
 				'dark-500': 'rgba(0, 0, 0, 0.5)',
 				'dark-200': 'rgba(0, 0, 0, 0.2)',
 				light: '#FFFFFF'
+			},
+			screens: {
+				smd: '425px'
 			}
 		}
 	},
