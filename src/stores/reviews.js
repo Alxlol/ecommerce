@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable, get } from 'svelte/store';
 
 function formatTimestamp(timestamp) {
 	const months = [
@@ -37,6 +37,7 @@ function formatTimestamp(timestamp) {
 
 export const reviews = writable([
 	{
+		id: 1,
 		name: 'Osbaldo Beahan',
 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quam.',
 		reactions: 4,
@@ -44,6 +45,7 @@ export const reviews = writable([
 		img: 'https://randomuser.me/api/portraits/men/5.jpg'
 	},
 	{
+		id: 2,
 		name: 'Gary Neville',
 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quam.',
 		reactions: 6,
@@ -51,6 +53,7 @@ export const reviews = writable([
 		img: 'https://randomuser.me/api/portraits/men/15.jpg'
 	},
 	{
+		id: 3,
 		name: 'Lorem Name',
 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quam.',
 		reactions: 1,
@@ -64,6 +67,7 @@ export function addComment(comment) {
 		return [
 			...reviews,
 			{
+				id: reviews.length + 1,
 				name: 'Guest User',
 				body: comment,
 				reactions: 0,
@@ -74,4 +78,19 @@ export function addComment(comment) {
 	});
 }
 
-export function likeComment(comment) {}
+export function likeComment(comment) {
+	let items = get(reviews);
+	let itemId = comment.id;
+	let commentIndex = items.findIndex((item) => {
+		return item.id == itemId;
+	});
+
+	reviews.update((items) => {
+		const newArray = items;
+		newArray[commentIndex] = {
+			...newArray[commentIndex],
+			reactions: newArray[commentIndex].reactions + 1
+		};
+		return newArray;
+	});
+}

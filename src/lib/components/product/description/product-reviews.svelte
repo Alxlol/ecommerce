@@ -7,7 +7,14 @@
 
 <div class="w-1/2">
 	<p class="text-xl font-semibold mb-4">Add a review</p>
-	<div class="relative rounded-lg overflow-hidden border-2 border-slate-100">
+	<form
+		action="submit"
+		on:submit|preventDefault={() => {
+			addComment(userInput);
+			userInput = '';
+		}}
+		class="relative rounded-lg overflow-hidden border-2 border-slate-100"
+	>
 		<input
 			bind:value={userInput}
 			placeholder="Leave a comment"
@@ -15,10 +22,13 @@
 			class="p-2 pr-20 w-full"
 		/>
 		<button
-			on:click={() => addComment(userInput)}
+			on:submit|preventDefault={() => {
+				addComment(userInput);
+				userInput = '';
+			}}
 			class="absolute top-0 right-0 h-full px-3 py-1 bg-blue-400 text-white">Post</button
 		>
-	</div>
+	</form>
 </div>
 <!-- Comments -->
 <p class="text-xl font-semibold mb-6 mt-12">{$reviews.length} comments</p>
