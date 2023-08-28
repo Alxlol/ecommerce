@@ -12,11 +12,11 @@
 	export const product = products.find((item) => {
 		return item.id == productId;
 	});
-
-	console.log(product);
 </script>
 
-<img class="w-full" src={product.thumbnail} alt="" />
+<div class="flex items-center justify-center w-full">
+	<img class="w-full max-w-xl object-cover" src={product.thumbnail} alt="" />
+</div>
 <PageWrapper>
 	<div class="flex items-center justify-between">
 		<div>
@@ -53,8 +53,8 @@
 	<hr class="my-4" />
 	<div class="flex gap-6">
 		<!-- <button class="bg-blue-400 py-2 w-full rounded-md text-white text-sm font-light mt-4"
-			>Add to cart</button
-		> -->
+				>Add to cart</button
+			> -->
 		<AddToCartButton {product} />
 		<BuyNowButton {product} />
 	</div>

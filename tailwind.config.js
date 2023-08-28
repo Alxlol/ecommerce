@@ -11,7 +11,8 @@ export default {
 				light: '#FFFFFF'
 			},
 			screens: {
-				smd: '425px'
+				smd: '425px',
+				660: '660px'
 			}
 		}
 	},
