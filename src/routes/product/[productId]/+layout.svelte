@@ -4,14 +4,12 @@
 	import BackIcon from '../../../lib/components/icons/back-icon.svelte';
 </script>
 
-<div class="min-h-screen">
-	<PageWrapper>
-		<nav class="flex justify-between items-center text-slate-700">
-			<BackIcon />
-			<p>Product details</p>
-			<CartIcon />
-		</nav>
-	</PageWrapper>
+<PageWrapper>
+	<nav class="flex justify-between items-center text-slate-700 w-full">
+		<BackIcon />
+		<p>Product details</p>
+		<CartIcon />
+	</nav>
+</PageWrapper>
 
-	<slot />
-</div>
+<slot />

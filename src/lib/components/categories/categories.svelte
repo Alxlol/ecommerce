@@ -23,11 +23,6 @@
 			icon: 'ic:round-watch',
 			url: 'category/mens-watches'
 		}
-		// {
-		// 	name: 'All',
-		// 	icon: 'eva:done-all-outline',
-		// 	url: 'all-products'
-		// }
 	];
 </script>
 

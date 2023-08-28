@@ -4,16 +4,13 @@
 	import CartIcon from '../../lib/components/icons/cart-icon.svelte';
 </script>
 
-<div class="min-h-screen">
-	<PageWrapper>
-		<nav class="flex justify-between items-center text-slate-700">
-			<a href="/">
-				<Icon icon="ic:round-arrow-back" width="30" height="30" />
-			</a>
-			<p>Your cart</p>
-			<CartIcon />
-		</nav>
-	</PageWrapper>
-
+<PageWrapper>
+	<nav class="flex justify-between items-center text-slate-700">
+		<a href="/">
+			<Icon icon="ic:round-arrow-back" width="30" height="30" />
+		</a>
+		<p>Your cart</p>
+		<CartIcon />
+	</nav>
 	<slot />
-</div>
+</PageWrapper>

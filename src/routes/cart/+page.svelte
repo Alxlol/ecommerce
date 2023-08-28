@@ -10,13 +10,9 @@
 	}
 </script>
 
-<div class="mb-36">
-	<PageWrapper>
-		<CartGrid cartItems={$cartItems} />
-	</PageWrapper>
-</div>
+<CartGrid cartItems={$cartItems} />
 
-<footer class="bg-slate-50 fixed left-0 bottom-0 w-full p-6">
+<!-- <footer class="bg-slate-50 fixed left-0 bottom-0 w-full p-6">
 	<div class="flex justify-between text-sm">
 		<p>Total</p>
 		{#key $cartItems}
@@ -26,4 +22,4 @@
 		{/key}
 	</div>
 	<button class="bg-blue-400 rounded-md py-2 w-full mt-6">Checkout</button>
-</footer>
+</footer> -->

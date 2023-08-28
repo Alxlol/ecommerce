@@ -5,6 +5,6 @@
 
 <button
 	on:click={() => addToCart(product)}
-	class="bg-blue-400 py-2 w-full rounded-md text-white text-sm font-light mt-4 md:py-4 md:text-base"
+	class="bg-blue-400 hover:bg-blue-300 py-2 w-full rounded-md text-white text-xs font-light mt-4 md:py-2"
 	>Add to cart</button
 >

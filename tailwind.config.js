@@ -4,14 +4,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#222222',
+				primary: '#9BBEED',
 				dark: '#000000',
 				'dark-500': 'rgba(0, 0, 0, 0.5)',
 				'dark-200': 'rgba(0, 0, 0, 0.2)',
 				light: '#FFFFFF'
 			},
 			screens: {
-				smd: '425px',
+				smd: '564px',
 				660: '660px'
 			}
 		}

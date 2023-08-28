@@ -1,3 +1,3 @@
-<p class="my-2 capitalize">
+<p class="my-4 capitalize">
 	<slot />
 </p>

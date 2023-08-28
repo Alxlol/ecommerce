@@ -12,7 +12,7 @@
 
 <button
 	on:click={handleClick}
-	class="bg-orange-400 py-2 w-full rounded-md text-white text-sm md:text-base font-light mt-4 md:py-4"
+	class="bg-orange-400 py-2 w-full rounded-md text-white text-xs font-light mt-4 md:py-4 hover:bg-orange-300"
 >
 	Buy now
 </button>
