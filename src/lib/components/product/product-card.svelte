@@ -4,8 +4,9 @@
 	import Rating from '../util/rating.svelte';
 	export let product = {};
 
+	let isClicked = false;
 	function animate() {
-		console.log('hey');
+		isClicked = true;
 	}
 </script>
 
@@ -26,6 +27,7 @@
 		<div class="flex justify-between items-center">
 			<p class="text-xl font-semibold">${product.price}.00</p>
 			<button
+				class:animate={isClicked}
 				on:click={() => addToCart(product)}
 				on:click={animate}
 				class="bg-blue-400 hover:bg-blue-300 p-2 rounded-full text-white"
@@ -34,3 +36,11 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.animate {
+		background-color: orangered;
+		transform: scale(0.76);
+		transition: all 0.18s ease-in-out;
+	}
+</style>
