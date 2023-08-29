@@ -1,6 +1,5 @@
 <script>
 	import Banner from '../lib/components/banner/banner.svelte';
-	import NewProducts from '../lib/components/new-products/new-products.svelte';
 	import Navbar from '../lib/components/nav/navbar.svelte';
 	import PageWrapper from '../lib/components/page/page-wrapper.svelte';
 

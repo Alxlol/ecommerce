@@ -10,12 +10,12 @@
 	<div class="flex flex-col justify-between w-full">
 		<div>
 			<a href="/cartItem.product/{cartItem.product.id}">
-				<p>{cartItem.product.title}</p>
+				<p class="capitalize lg:text-lg">{cartItem.product.title}</p>
 			</a>
 			<p class="text-sm text-dark-500">by {cartItem.product.brand}</p>
 		</div>
 		<div class="flex justify-between w-full">
-			<p>${cartItem.product.price}.00</p>
+			<p class="lg:text-lg">${cartItem.product.price}.00</p>
 
 			<div class="flex items-center gap-3">
 				<button

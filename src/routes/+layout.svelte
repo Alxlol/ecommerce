@@ -3,10 +3,12 @@
 	import Footer from '../lib/components/page/footer.svelte';
 </script>
 
-<div class="items-center justify-center flex flex-col w-full">
-	<slot />
+<div class="min-h-screen flex flex-col justify-between">
+	<div class="items-center justify-center flex flex-col w-full">
+		<slot />
+	</div>
+	<Footer />
 </div>
-<Footer />
 
 <style>
 	:global(.svelte-body) {
