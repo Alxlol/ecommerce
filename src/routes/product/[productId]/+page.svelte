@@ -18,6 +18,6 @@
 	<ProductDescription {product} />
 	<hr class="my-4" />
 	<ProductReviews />
-	<!-- TODO: update page when clicking on another product -->
-	<ProductSection headline="You might also like" products={products.slice(20, 25)} />
 </PageWrapper>
+<!-- TODO: update page when clicking on another product
+<ProductSection headline="You might also like" products={products.slice(20, 25)} /> -->

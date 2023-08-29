@@ -4,6 +4,7 @@
 	import PageWrapper from '../page/page-wrapper.svelte';
 	import Navlink from './navlink.svelte';
 	import Hamburger from '../hamburger/hamburger.svelte';
+	import companyLogo from '../../assets/company-logo.svg';
 
 	const navlinks = [
 		{
@@ -27,8 +28,8 @@
 
 <PageWrapper>
 	<nav class="flex justify-between items-center">
-		<a href="/" class="flex items-center">
-			<Icon icon="carbon:logo-figma" width="30" height="30" />
+		<a href="/" class="flex items-center gap-2">
+			<img class="w-12 h-12" src={companyLogo} alt="" />
 			<p>OnlineShop</p>
 		</a>
 		<!-- Large navmenu -->

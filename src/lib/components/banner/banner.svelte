@@ -8,12 +8,12 @@
 	export let flip = false;
 </script>
 
-<div class=" w-full">
+<div class="w-full">
 	<PageWrapper>
 		<div
 			class="flex flex-col {flip
 				? 'smd:flex-row-reverse'
-				: 'smd:flex-row'} items-center justify-center gap-10 md:gap-14 py-4 xl:px-20"
+				: 'smd:flex-row'} items-center justify-center gap-10 md:gap-14 py-4"
 		>
 			<div class="w-full justify-center lg:p-4">
 				<img class="w-auto rounded-xl max-w-full" src={img} alt="" />

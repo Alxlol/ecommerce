@@ -5,7 +5,7 @@
 	export let userInput = '';
 </script>
 
-<div class="w-1/2">
+<div class="md:w-1/2">
 	<p class="text-xl font-semibold mb-4">Add a review</p>
 	<form
 		action="submit"
@@ -33,7 +33,7 @@
 <!-- Comments -->
 <p class="text-xl font-semibold mb-6 mt-12">{$reviews.length} comments</p>
 
-<div class="grid grid-cols-2 gap-8 flex-col-reverse">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-col-reverse">
 	{#key $reviews}
 		{#each $reviews as review, index}
 			<Review {index} />

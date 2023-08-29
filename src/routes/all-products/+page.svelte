@@ -7,6 +7,7 @@
 	import ProductGrid from '../../lib/components/product/product-grid.svelte';
 	import ProductCard from '../../lib/components/product/product-card.svelte';
 	import { fade } from 'svelte/transition';
+	import PageTransition from '../../lib/components/page/page-transition.svelte';
 
 	export let data;
 	let products = data.products;
@@ -27,16 +28,18 @@
 </script>
 
 <Navbar />
-<Banner img={browse} headline="Browse all of our products" />
-<PageWrapper>
-	<Categories onClick={getProductsFromCategory} />
-	{#key products}
-		<div in:fade={{ duration: 600 }}>
-			<ProductGrid>
-				{#each products as product}
-					<ProductCard {product} />
-				{/each}
-			</ProductGrid>
-		</div>
-	{/key}
-</PageWrapper>
+<PageTransition>
+	<Banner img={browse} headline="Browse all of our products" />
+	<PageWrapper>
+		<Categories onClick={getProductsFromCategory} />
+		{#key products}
+			<div in:fade={{ duration: 600 }}>
+				<ProductGrid>
+					{#each products as product}
+						<ProductCard {product} />
+					{/each}
+				</ProductGrid>
+			</div>
+		{/key}
+	</PageWrapper>
+</PageTransition>
