@@ -12,7 +12,7 @@
 </script>
 
 <Navbar />
-<Banner img={saleBanner} headline="Big sale! Right now!" />
+<Banner img={saleBanner} headline="Huge sale! Upto 50% off on all products" />
 <PageWrapper>
 	<ProductSection headline="New Products" products={products.slice(10, 20)} />
 </PageWrapper>

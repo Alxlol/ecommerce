@@ -16,11 +16,11 @@
 		},
 		{
 			name: 'About Us',
-			url: '/'
+			url: '/about'
 		},
 		{
 			name: 'Contact',
-			url: '/'
+			url: '/contact'
 		}
 	];
 </script>
