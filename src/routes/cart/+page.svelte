@@ -2,11 +2,17 @@
 	import CartGrid from '../../lib/components/cart/cart-grid.svelte';
 	import Icon from '@iconify/svelte';
 	import { cartItems } from '../../stores/cart';
+	import { fly } from 'svelte/transition';
 
 	function getCartSum() {
 		let sum = 0;
 		$cartItems.map((item) => (sum += item.product.price * item.quantity));
 		return sum;
+	}
+
+	let checkout = false;
+	function toggleCheckout() {
+		checkout = !checkout;
 	}
 </script>
 
@@ -24,9 +30,17 @@
 				</p>
 			{/key}
 
-			<button class="bg-blue-400 hover:bg-blue-300 py-3 px-5 rounded-3xl text-white"
-				>Checkout</button
-			>
+			<div>
+				<button
+					on:click={toggleCheckout}
+					class="bg-blue-400 hover:bg-blue-300 py-3 px-5 rounded-3xl text-white">Checkout</button
+				>
+				{#if checkout}
+					<p in:fly={{ duration: 500, y: 10 }} class="text-red-400 absolute text-center">
+						Sorry no checkout yet
+					</p>
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>
