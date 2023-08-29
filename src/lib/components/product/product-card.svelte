@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="w-full h-[22rem] flex flex-col rounded-xl overflow-hidden outline outline-1 outline-gray-200 hover:scale-105 transition-transform"
+	class="w-full h-[22rem] flex flex-col rounded-xl overflow-hidden outline outline-1 outline-gray-200 md:hover:scale-105 transition-transform"
 >
 	<div class="h-1/2 overflow-hidden flex items-center justify-center">
 		<a class="h-full w-full" href="/product/{product.id}">
