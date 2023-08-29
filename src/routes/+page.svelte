@@ -6,8 +6,6 @@
 
 	import saleBanner from '$lib/assets/sales-banners/sale_banner_1.svg';
 	import saleBanner2 from '$lib/assets/sales-banners/sale_banner_2.svg';
-	import SpecialOffers from '../lib/components/special-offers/special-offers.svelte';
-	import Footer from '../lib/components/page/footer.svelte';
 	import ProductSection from '../lib/components/product/section/product-section.svelte';
 
 	export let data;
