@@ -12,7 +12,7 @@
 		},
 		{
 			name: 'Browse',
-			url: '/'
+			url: '/all-products'
 		},
 		{
 			name: 'About Us',
