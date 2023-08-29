@@ -55,7 +55,9 @@
 
 <div class="my-4 w-full mb-12">
 	<SectionHeadline>Categories</SectionHeadline>
-	<div class="w-full overflow-x-auto whitespace-nowrap flex justify-between">
+	<div
+		class="w-full overflow-x-auto whitespace-nowrap lg:flex justify-between place-items-center grid grid-cols-3 smd:grid-cols-4 md:grid-cols-5"
+	>
 		{#each categories as category}
 			<CategoryItem {onClick} text={category.name} icon={category.icon} url={category.url} />
 		{/each}

@@ -6,6 +6,7 @@
 	import PageWrapper from '../../lib/components/page/page-wrapper.svelte';
 	import ProductGrid from '../../lib/components/product/product-grid.svelte';
 	import ProductCard from '../../lib/components/product/product-card.svelte';
+	import { fade } from 'svelte/transition';
 
 	export let data;
 	let products = data.products;
@@ -20,7 +21,6 @@
 					newProducts.push(item);
 				}
 			});
-			console.log(newProducts);
 			products = newProducts;
 		}
 	}
@@ -31,10 +31,12 @@
 <PageWrapper>
 	<Categories onClick={getProductsFromCategory} />
 	{#key products}
-		<ProductGrid>
-			{#each products as product}
-				<ProductCard {product} />
-			{/each}
-		</ProductGrid>
+		<div in:fade={{ duration: 600 }}>
+			<ProductGrid>
+				{#each products as product}
+					<ProductCard {product} />
+				{/each}
+			</ProductGrid>
+		</div>
 	{/key}
 </PageWrapper>
