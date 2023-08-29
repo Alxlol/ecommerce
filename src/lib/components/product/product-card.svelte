@@ -1,31 +1,36 @@
 <script>
-	import AddToCartButton from '../buttons/add-to-cart-button.svelte';
+	import { addToCart } from '../../../stores/cart';
 	import Icon from '@iconify/svelte';
+	import Rating from '../util/rating.svelte';
 	export let product = {};
+
+	function animate() {
+		console.log('hey');
+	}
 </script>
 
-<div class="flex justify-center">
-	<div
-		class="bg-slate-50 rounded-lg overflow-hidden shadow-md flex flex-col justify-between w-56 lg:w-64"
-	>
-		<a href="/product/{product.id}"
-			><img
-				src={product.thumbnail}
-				alt="picture of {product.category}"
-				class="w-full object-cover h-40"
-			/></a
-		>
-		<div class="p-2 lg:p-4 flex flex-col justify-end">
-			<a class="flex justify-between items-center" href="/product/{product.id}">
-				<div>
-					<p>{product.title}</p>
-					<p class="text-lg font-semibold mt-2">${product.price}.99</p>
-				</div>
-				<div>
-					<Icon icon="ant-design:heart-twotone" color="rgb(248 113 113)" width="30" height="30" />
-				</div>
-			</a>
-			<AddToCartButton {product} />
+<div
+	class="w-full h-[22rem] flex flex-col rounded-xl overflow-hidden outline outline-1 outline-gray-200 hover:scale-105 transition-transform"
+>
+	<div class="h-1/2 overflow-hidden flex items-center justify-center">
+		<a class="h-full w-full" href="/product/{product.id}">
+			<img class="h-full w-full object-cover" src={product.thumbnail} alt="" />
+		</a>
+	</div>
+	<div class="flex flex-col h-1/2 justify-between py-4 px-4">
+		<a class="w-full" href="/product/{product.id}">
+			<p class="capitalize">{product.title}</p>
+		</a>
+
+		<Rating />
+		<div class="flex justify-between items-center">
+			<p class="text-xl font-semibold">${product.price}.00</p>
+			<button
+				on:click={() => addToCart(product)}
+				on:click={animate}
+				class="bg-blue-400 hover:bg-blue-300 p-2 rounded-full text-white"
+				><Icon width="24" height="24" icon="mdi:cart" /></button
+			>
 		</div>
 	</div>
 </div>
