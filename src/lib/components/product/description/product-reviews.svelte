@@ -34,7 +34,9 @@
 <p class="text-xl font-semibold mb-6 mt-12">{$reviews.length} comments</p>
 
 <div class="grid grid-cols-2 gap-8 flex-col-reverse">
-	{#each $reviews.slice().reverse() as review}
-		<Review {review} />
-	{/each}
+	{#key $reviews}
+		{#each $reviews as review, index}
+			<Review {index} />
+		{/each}
+	{/key}
 </div>

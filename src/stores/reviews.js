@@ -42,7 +42,8 @@ export const reviews = writable([
 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quam.',
 		reactions: 4,
 		time: '22:06 - August 28th 2023',
-		img: 'https://randomuser.me/api/portraits/men/5.jpg'
+		img: 'https://randomuser.me/api/portraits/men/5.jpg',
+		liked: false
 	},
 	{
 		id: 2,
@@ -50,7 +51,8 @@ export const reviews = writable([
 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quam.',
 		reactions: 6,
 		time: '22:06 - August 28th 2023',
-		img: 'https://randomuser.me/api/portraits/men/15.jpg'
+		img: 'https://randomuser.me/api/portraits/men/15.jpg',
+		liked: false
 	},
 	{
 		id: 3,
@@ -58,22 +60,24 @@ export const reviews = writable([
 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quam.',
 		reactions: 1,
 		time: '22:06 - August 28th 2023',
-		img: 'https://randomuser.me/api/portraits/women/63.jpg'
+		img: 'https://randomuser.me/api/portraits/women/63.jpg',
+		liked: false
 	}
 ]);
 
 export function addComment(comment) {
 	reviews.update((reviews) => {
 		return [
-			...reviews,
 			{
 				id: reviews.length + 1,
 				name: 'Guest User',
 				body: comment,
 				reactions: 0,
 				time: formatTimestamp(Date.now()),
-				img: 'https://randomuser.me/api/portraits/lego/2.jpg'
-			}
+				img: 'https://randomuser.me/api/portraits/lego/2.jpg',
+				liked: false
+			},
+			...reviews
 		];
 	});
 }
@@ -89,7 +93,8 @@ export function likeComment(comment) {
 		const newArray = items;
 		newArray[commentIndex] = {
 			...newArray[commentIndex],
-			reactions: newArray[commentIndex].reactions + 1
+			reactions: newArray[commentIndex].reactions + 1,
+			liked: true
 		};
 		return newArray;
 	});
